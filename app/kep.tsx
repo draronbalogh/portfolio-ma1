@@ -1,14 +1,12 @@
-interface KepProps {
-    kepekEgyediLeirasa: string;
-    kepEgyediUrl: string;
-}
+import LoadingKomponens from './loading';
 
-const Kep = function({kepekEgyediLeirasa, kepEgyediUrl}:KepProps){
+
+const Kep = function({kepekEgyediLeirasa, kepEgyediUrl, loadingPagetolAKepenAtaLoading}){
     return (
         <div>            
             <img src={kepEgyediUrl} /> 
-            <p>{kepekEgyediLeirasa}</p>
-            <progress id="file" max="100" value="70">70%</progress>
+            <p>{kepekEgyediLeirasa}</p>      
+            <LoadingKomponens kepAdjaTovabb={loadingPagetolAKepenAtaLoading*3} />
         </div>
     )
 }
